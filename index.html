@@ -37,7 +37,8 @@
             <input id="rotate" type="text" name="tmin" value="" placeholder="rotate">
           </li>
         </ul>
-        <button id="run" type="button" name="button">RUN</button>
+        <button id="run" class="primary" type="button" name="button">RUN</button>
+        <button id="clear" class="secondary" type="button" name="button">CLEAR</button>
       </nav>
       <section id="Content">
 
@@ -51,6 +52,11 @@
       $('#run').click(function(){
         greet();
       });
+      $('#clear').click(function(){
+          var winwidth = $(window).width();
+          var winheight = $('#Content').height();
+        resizeCanvas(winwidth,winheight);
+      })
       $('.hamburger').click(function(){
         $(this).toggleClass('open');
         if($(this).hasClass('open')){
