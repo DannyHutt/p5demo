@@ -20,6 +20,9 @@
       </div>
       <nav id="Sidebar">
         <hr class="top">
+        <div class="toggleBoxSmall">
+          <div class="knob"></div>
+        </div>
         <ul>
           <li class="ctrl_fill">
             <label for="fill">Fill</label>
@@ -48,15 +51,19 @@
   <script type="text/javascript">
 
     $(document).ready(function(){
+
       var sbwidth = $('#Sidebar').outerWidth();
+
       $('#run').click(function(){
         greet();
       });
+
       $('#clear').click(function(){
           var winwidth = $(window).width();
           var winheight = $('#Content').height();
         resizeCanvas(winwidth,winheight);
-      })
+      });
+
       $('.hamburger').click(function(){
         $(this).toggleClass('open');
         if($(this).hasClass('open')){
@@ -65,6 +72,11 @@
           $('#Sidebar').css('margin-left','-'+sbwidth+'px');
         }
       });
+
+      $('.toggleBoxSmall').click(function() {
+        $(this).toggleClass('on');
+      });
+      
     }); // ready
 
 

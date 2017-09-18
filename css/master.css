@@ -63,6 +63,75 @@ nav hr.top
   border:1px solid #3a3a3a;
 }
 
+input{
+  border-radius: 3px;
+  border:1px solid #333;
+  padding:5px 10px;
+  background-color: #1d1d1d;
+  color:#0095ff;
+}
+
+label{
+  margin-bottom: 5px;
+}
+
+nav ul li label,
+nav ul li input {
+  display:block;
+}
+
+nav ul li{
+  margin-bottom:15px;
+  list-style: none;
+}
+
+nav ul{
+  padding-left:0;
+}
+
+#Sidebar ul li input{
+  display:inline-block;
+  width:50px;
+  margin-right:8px;
+}
+
+
+/* toggle switch start */
+.toggleBoxSmall
+    {
+      border-radius:50px;
+      width: 24px;
+      height: 14px;
+      cursor:pointer;
+      user-select:none;
+      background-color:#b7b7b7;
+      transition:background-color .2s;
+    }
+
+ .toggleBoxSmall .knob
+    {
+      border-radius: 50px;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      margin-left: 1px;
+      box-sizing: content-box;
+      background:#eee;
+      transition:margin .1s;
+      margin-top:1px;
+    }
+
+.toggleBoxSmall.on .knob
+{
+  margin-left:11px;
+}
+
+.toggleBoxSmall.on
+{
+  background-color:#0083E0;
+}
+/* toggle switch end */
+
 /* hamburger start */
 .hamburger
 {
@@ -133,35 +202,3 @@ nav hr.top
   left: 50%;
 }
 /* hamburger end */
-
-input{
-  border-radius: 3px;
-  border:1px solid #333;
-  padding:5px 10px;
-  background-color: #1d1d1d;
-  color:#0095ff;
-}
-
-label{
-  margin-bottom: 5px;
-}
-
-nav ul li label,
-nav ul li input {
-  display:block;
-}
-
-nav ul li{
-  margin-bottom:15px;
-  list-style: none;
-}
-
-nav ul{
-  padding-left:0;
-}
-
-#Sidebar ul li input{
-  display:inline-block;
-  width:50px;
-  margin-right:8px;
-}
