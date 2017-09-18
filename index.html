@@ -1,21 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+    <link rel="stylesheet" href="/css/master.css">
     <script src="p5.min.js"></script>
     <script src="addons/p5.dom.min.js"></script>
     <script src="addons/p5.sound.min.js"></script>
     <script src="jquery-3.2.1.min.js"></script>
     <script src="sketch.js"></script>
-    <style> body {padding: 0; margin: 0;} </style>
   </head>
   <body>
-    <div id="myContainer">
+    <div id="Wrapper">
+      <div class="hamburgerBG"></div>
+      <div class="hamburger open">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="Sidebar">
+        <hr class="top">
+        <ul>
+          <li class="ctrl_fill">
+            <label for="fill">Fill</label>
+            <input id="fill_r" type="text" name="fill_r" value="" placeholder="R">
+            <input id="fill_g" type="text" name="fill_g" value="" placeholder="G">
+            <input id="fill_b" type="text" name="fill_b" value="" placeholder="B">
+          </li>
+          <li>
+            <label for="translate">Translate (random)</label>
+            <input id="tmin" type="text" name="tmin" value="" placeholder="min">
+            <input id="tmax" type="text" name="tmax" value="" placeholder="max">
+          </li>
+          <li>
+            <label for="rotate">Rotate (random)</label>
+            <input id="rotate" type="text" name="tmin" value="" placeholder="rotate">
+          </li>
+        </ul>
+        <button id="run" type="button" name="button">RUN</button>
+      </nav>
+      <section id="Content">
 
+      </section>
     </div>
   </body>
   <script type="text/javascript">
 
-    
+    $(document).ready(function(){
+      var sbwidth = $('#Sidebar').outerWidth();
+      $('#run').click(function(){
+        greet();
+      });
+      $('.hamburger').click(function(){
+        $(this).toggleClass('open');
+        if($(this).hasClass('open')){
+          $('#Sidebar').css('margin-left','0px');
+        }else{
+          $('#Sidebar').css('margin-left','-'+sbwidth+'px');
+        }
+      });
+    }); // ready
 
   </script>
 </html>
