@@ -89,10 +89,10 @@ nav ul{
   padding-left:0;
 }
 
-#Sidebar ul li input{
+.translate input,
+.rotate input{
   display:inline-block;
   width:50px;
-  margin-right:8px;
 }
 
 
@@ -206,15 +206,16 @@ nav ul{
 /* number spinner start */
 
 
-input[type=number] {
+span.spinner input.spinner {
 	float: left;
-	width: 70px;
-	height: 35px;
+	width: 40px;
+	height: 26px;
 	padding: 0;
 	text-transform: uppercase;
 	text-align: center;
-	color: #93504C;
-	border: 2px #93504C solid;
+  color: #989898;
+  border: 1px #565656 solid;
+  border-radius: 0;
 	background: none;
 	outline: none;
 	pointer-events: none;
@@ -234,15 +235,15 @@ span.spinner {
 span.spinner > .sub, span.spinner > .add {
 	float: left;
 	display: block;
-	width: 35px;
-	height: 35px;
+	width: 25px;
+	height: 26px;
 	text-align: center;
 	font-family: Lato;
 	font-weight: 700;
 	font-size: 1.2em;
-	line-height: 33px;
-	color: #93504C;
-	border: 2px #93504C solid;
+	line-height: 26px;
+  color: #989898;
+  border: 1px #565656 solid;
 	border-right: 0;
 	border-radius: 2px 0 0 2px;
 	cursor: pointer;
@@ -255,14 +256,14 @@ span.spinner > .sub, span.spinner > .add {
 
 span.spinner > .add {
 	top: 0;
-	border: 2px #93504C solid;
+	border: 1px #565656 solid;
 	border-left: 0;
 	border-radius: 0 2px 2px 0;
 }
 
 span.spinner > .sub:hover, span.spinner > .add:hover {
-	background: #93504C;
-	color: #25323B;
+	background: #1d1d1d;
+	color: #fff;
 }
 
 input[type=number]::-webkit-inner-spin-button,
