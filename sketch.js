@@ -99,7 +99,7 @@ function updateControls() {
                 clearInterval(intervalDownA);
               }
             }, 50);
-          },1000);
+          },500);
           timeoutDownB = setTimeout(function(){
             clearInterval(intervalDownA);
             intervalDownB = setInterval(function () {
@@ -127,7 +127,7 @@ function updateControls() {
                 clearInterval(intervalUpA);
               }
             }, 50);
-          },1000);
+          },500);
           timeoutUpB = setTimeout(function(){
             clearInterval(intervalUpA);
             intervalUpB = setInterval(function () {
