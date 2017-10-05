@@ -71,24 +71,91 @@ function updateControls() {
 	$.fn.spinner = function() {
 		this.each(function() {
 			var el = $(this);
+      var timeoutUpA;
+      var timeoutUpB;
+      var timeoutDownA;
+      var timeoutDownB;
+      var intervalUpA;
+      var intervalUpB;
+      var intervalDownA;
+      var intervalDownB;
 
 			// add elements
 			el.wrap('<span class="spinner"></span>');
 			el.before('<span class="sub">-</span>');
 			el.after('<span class="add">+</span>');
 
-			// substract
-			el.parent().on('click', '.sub', function () {
-				if (el.val() > parseInt(el.attr('min')))
-					el.val( function(i, oldval) { return --oldval; });
+      // substract mousedown
+			el.parent().on('mousedown', '.sub', function () {
+        var min = parseInt(el.attr('min'));
+        var val = parseInt(el.val());
+				if (val > min){
+          el.val( function(i, oldval) { return --oldval; });
+          timeoutDownA = setTimeout(function(){
+            intervalDownA = setInterval(function () {
+              if(val >= min){
+                el.val(val--);
+              }else{
+                clearInterval(intervalDownA);
+              }
+            }, 50);
+          },1000);
+          timeoutDownB = setTimeout(function(){
+            clearInterval(intervalDownA);
+            intervalDownB = setInterval(function () {
+              if(val >= min){
+                el.val(val--);
+              }else{
+                clearInterval(intervalDownB);
+              }
+            }, 10);
+          },4000);
+        }
 			});
 
-			// increment
-			el.parent().on('click', '.add', function () {
-				if (el.val() < parseInt(el.attr('max')))
-					el.val( function(i, oldval) { return ++oldval; });
+			// increment mousedown
+			el.parent().on('mousedown', '.add', function () {
+        var max = parseInt(el.attr('max'));
+        var val = parseInt(el.val());
+				if (val < max){
+          el.val( function(i, oldval) { return ++oldval; });
+          timeoutUpA = setTimeout(function(){
+            intervalUpA = setInterval(function () {
+              if(val <= max){
+                el.val(val++);
+              }else{
+                clearInterval(intervalUpA);
+              }
+            }, 50);
+          },1000);
+          timeoutUpB = setTimeout(function(){
+            clearInterval(intervalUpA);
+            intervalUpB = setInterval(function () {
+              if(val <= max){
+                el.val(val++);
+              }else{
+                clearInterval(intervalUpB);
+              }
+            }, 10);
+          },4000);
+        }
 			});
-	    });
+
+      el.parent().on('mouseup','.add',function(){
+        clearTimeout(timeoutUpA);
+        clearTimeout(timeoutUpB);
+        clearInterval(intervalUpA);
+        clearInterval(intervalUpB);
+      });
+
+      el.parent().on('mouseup','.sub',function () {
+        clearTimeout(timeoutDownA);
+        clearTimeout(timeoutDownB);
+        clearInterval(intervalDownA);
+        clearInterval(intervalDownB);
+      });
+
+    });
 	};
 })(jQuery);
 

@@ -26,12 +26,13 @@
           </li>
           <li class="translate">
             <label for="translate">Translate (random)</label>
-            <input id="tmin" type="text" name="tmin" value="" placeholder="min">
-            <input id="tmax" type="text" name="tmax" value="" placeholder="max">
+            <!-- not sure how this should work -->
+            <input id="tmin" class="spinner" type="number" min="0" max="10" name="tmin" value="0" placeholder="min">
+            <input id="tmax" class="spinner" type="number" min="0" max="10" name="tmax" value="0" placeholder="max">
           </li>
           <li class='rotate'>
             <label for="rotate">Rotate (random)</label>
-            <input id="rotate" type="text" name="tmin" value="" placeholder="rotate">
+            <input id="rotate" class="spinner" type="number" min="0" max="360" name="tmin" value="">
           </li>
         </ul>
         <button id="run" class="primary" type="button" name="button">RUN</button>

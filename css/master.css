@@ -71,6 +71,14 @@ input{
   color:#0095ff;
 }
 
+input[type=number]{
+  opacity: 0;
+}
+
+.spinner > input[type=number]{
+  opacity:100;
+}
+
 label{
   margin-bottom: 5px;
 }
