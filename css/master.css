@@ -6,6 +6,14 @@ body{
   height: 100%;
 }
 
+html{
+  overflow:hidden;
+}
+
+body{
+  overflow:auto;
+}
+
 :focus{
   outline:none;
   background-color: #101010 !important;
@@ -21,8 +29,6 @@ body{
 #Sidebar{
   height: 100%;
   position:absolute;
-  padding:25px 15px;
-  background-color:#292929;
   border-right:1px solid #101010;
   color:#ccc;
   font-family: arial;
@@ -31,6 +37,10 @@ body{
 
 #Content{
   height:100%;
+}
+
+canvas{
+  margin-bottom:-4px;
 }
 
 button{
@@ -103,6 +113,67 @@ nav ul{
   width:50px;
 }
 
+/*************************/
+
+.navbutton{
+  border-radius: 50px;
+  background-color: #292929;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  margin-top: -13px;
+  left: 100%;
+  transition: margin-left .3s;
+  cursor: pointer;
+}
+
+.arrow{
+  height: 8px;
+  width: 8px;
+  border-right: 3px solid #969696;
+  border-bottom: 3px solid #969696;
+  position: absolute;
+  top: 20px;
+}
+
+.navbutton.show{
+  margin-left: -25px;
+}
+
+.navbutton.hide{
+  margin-left:0;
+}
+
+.navbutton.open .arrow{
+  left:30px;
+  transform: rotate(-225deg);
+}
+
+.navbutton .arrow{
+  left: 28px;
+  transform: rotate(-45deg);
+}
+
+
+
+.sidebar-scroll{
+  height:100%;
+  overflow:scroll;
+  background-color:#292929;
+  position: relative;
+}
+
+.sidebar-inner{
+  padding: 15px;
+}
+
+.spacer{
+  width:100px;
+  height:1200px;
+}
+
+/*************************/
 
 /* toggle switch start */
 .toggleBoxSmall
@@ -160,7 +231,7 @@ nav ul{
   height: 43px;
   width: 43px;
   border-radius: 50px;
-  background: #fff;
+  background: #292929;
   box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
 }
 

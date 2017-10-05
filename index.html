@@ -5,42 +5,49 @@
   </head>
   <body>
     <div id="Wrapper">
-      <div class="hamburgerBG"></div>
-      <div class="hamburger open">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
       <nav id="Sidebar">
-        <hr class="top">
-        <div class="toggleBoxSmall">
-          <div class="knob"></div>
+        <div class="navbutton open show">
+          <div class="arrow">
+
+          </div>
         </div>
-        <ul>
-          <li class="ctrl_fill">
-            <label for="fill">Fill</label>
-            <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
-            <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
-            <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B">
-          </li>
-          <li class="translate">
-            <label for="translate">Translate (random)</label>
-            <!-- not sure how this should work -->
-            <input id="tmin" class="spinner" type="number" min="0" max="10" name="tmin" value="0" placeholder="min">
-            <input id="tmax" class="spinner" type="number" min="0" max="10" name="tmax" value="0" placeholder="max">
-          </li>
-          <li class='rotate'>
-            <label for="rotate">Rotate (random)</label>
-            <input id="rotate" class="spinner" type="number" min="0" max="10" name="rotate" value="0">
-          </li>
-        </ul>
-        <button id="run" class="primary" type="button" name="button">RUN</button>
-        <button id="clear" class="secondary" type="button" name="button">CLEAR</button>
+        <div class="sidebar-scroll">
+          <div class="sidebar-inner">
+          <div class="toggleBoxSmall">
+            <div class="knob"></div>
+          </div>
+          <ul>
+            <li class="ctrl_fill">
+              <label for="fill">Fill</label>
+              <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+              <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+              <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B">
+            </li>
+            <li class="translate">
+              <label for="translate">Translate (random)</label>
+              <!-- not sure how this should work -->
+              <input id="tmin" class="spinner" type="number" min="0" max="10" name="tmin" value="0" placeholder="min">
+              <input id="tmax" class="spinner" type="number" min="0" max="10" name="tmax" value="0" placeholder="max">
+            </li>
+            <li class='rotate'>
+              <label for="rotate">Rotate (random)</label>
+              <input id="rotate" class="spinner" type="number" min="0" max="10" name="rotate" value="0">
+            </li>
+          </ul>
+          <button id="run" class="primary" type="button" name="button">RUN</button>
+          <button id="clear" class="secondary" type="button" name="button">CLEAR</button>
+
+          <div class="spacer">
+            <!-- remove this -->
+          </div>
+
+        </div>
+
       </nav>
       <section id="Content">
 
       </section>
+    </div>
     </div>
   </body>
 
@@ -59,18 +66,22 @@
         greet();
       });
 
+      $('#Content').click(function(){
+        closeSidebar();
+      })
+
       $('#clear').click(function(){
           var winwidth = $(window).width();
           var winheight = $('#Content').height();
         resizeCanvas(winwidth,winheight);
       });
 
-      $('.hamburger').click(function(){
+      $('.navbutton').click(function(){
         $(this).toggleClass('open');
         if($(this).hasClass('open')){
-          $('#Sidebar').css('margin-left','0px');
+          openSidebar();
         }else{
-          $('#Sidebar').css('margin-left','-'+sbwidth+'px');
+          closeSidebar();
         }
       });
 
@@ -78,7 +89,19 @@
         $(this).toggleClass('on');
       });
 
+      function closeSidebar(){
+        $('#Sidebar').css('margin-left','-'+sbwidth+'px');
+        $('.hamburger').removeClass('open');
+      }
+
+      function openSidebar(){
+        $('#Sidebar').css('margin-left','0px');
+        $('.hamburger').addClass('open');
+      }
+
     }); // ready
+
+
 
 
   </script>
