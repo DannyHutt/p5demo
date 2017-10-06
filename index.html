@@ -5,10 +5,12 @@
   </head>
   <body>
     <div id="Wrapper">
-      <nav id="Sidebar">
-        <div class="navbutton open show">
-          <div class="arrow">
 
+      <nav id="Sidebar">
+
+        <div class="navbutton-trigger">
+          <div class="navbutton">
+            <div class="arrow"></div>
           </div>
         </div>
         <div class="sidebar-scroll">
@@ -68,7 +70,7 @@
 
       $('#Content').click(function(){
         closeSidebar();
-      })
+      });
 
       $('#clear').click(function(){
           var winwidth = $(window).width();
@@ -90,14 +92,18 @@
       });
 
       function closeSidebar(){
+        $('.navbutton').removeClass('open');
         $('#Sidebar').css('margin-left','-'+sbwidth+'px');
-        $('.hamburger').removeClass('open');
+        $('.navbutton-trigger').attr('class','navbutton-trigger active');
       }
 
       function openSidebar(){
         $('#Sidebar').css('margin-left','0px');
-        $('.hamburger').addClass('open');
+        $('.navbutton-trigger').attr('class','navbutton-trigger open');
+          $('.navbutton').addClass('open');
       }
+
+      //closeSidebar();
 
     }); // ready
 

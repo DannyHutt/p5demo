@@ -123,7 +123,7 @@ nav ul{
   height: 50px;
   top: 50%;
   margin-top: -13px;
-  left: 100%;
+  left: 0;
   transition: margin-left .3s;
   cursor: pointer;
 }
@@ -137,15 +137,29 @@ nav ul{
   top: 20px;
 }
 
-.navbutton.show{
+.navbutton-trigger{
+    height:100%;
+    width:100px;
+    float:left;
+    position:absolute;
+    right:-100px;
+}
+
+.navbutton-trigger.open{
+  right:0;
+  width:0;
+}
+
+.navbutton{
+  margin-left: -50px;
+}
+
+.active:hover .navbutton,
+.open .navbutton{
   margin-left: -25px;
 }
 
-.navbutton.hide{
-  margin-left:0;
-}
-
-.navbutton.open .arrow{
+.open .navbutton .arrow{
   left:30px;
   transform: rotate(-225deg);
 }
