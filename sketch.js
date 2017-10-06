@@ -90,7 +90,8 @@ function updateControls() {
         var min = parseInt(el.attr('min'));
         var val = parseInt(el.val());
 				if (val > min){
-          el.val( function(i, oldval) { return --oldval; });
+          val--;
+          el.val(val);
           timeoutDownA = setTimeout(function(){
             intervalDownA = setInterval(function () {
               if(val >= min){
@@ -98,7 +99,7 @@ function updateControls() {
               }else{
                 clearInterval(intervalDownA);
               }
-            }, 50);
+            }, 80);
           },500);
           timeoutDownB = setTimeout(function(){
             clearInterval(intervalDownA);
@@ -108,7 +109,7 @@ function updateControls() {
               }else{
                 clearInterval(intervalDownB);
               }
-            }, 10);
+            }, 30);
           },4000);
         }
 			});
@@ -118,7 +119,8 @@ function updateControls() {
         var max = parseInt(el.attr('max'));
         var val = parseInt(el.val());
 				if (val < max){
-          el.val( function(i, oldval) { return ++oldval; });
+          val++;
+          el.val( val);
           timeoutUpA = setTimeout(function(){
             intervalUpA = setInterval(function () {
               if(val <= max){
@@ -126,7 +128,7 @@ function updateControls() {
               }else{
                 clearInterval(intervalUpA);
               }
-            }, 50);
+            }, 80);
           },500);
           timeoutUpB = setTimeout(function(){
             clearInterval(intervalUpA);
@@ -136,7 +138,7 @@ function updateControls() {
               }else{
                 clearInterval(intervalUpB);
               }
-            }, 10);
+            }, 30);
           },4000);
         }
 			});
