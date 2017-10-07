@@ -15,37 +15,424 @@
         </div>
         <div class="sidebar-scroll">
           <div class="sidebar-inner">
-          <div class="toggleBoxSmall">
-            <div class="knob"></div>
-          </div>
-          <ul>
-            <li class="ctrl_fill">
+
+          <ul class="listcontrols">
+            <li class="ctrl colorMode">
+              <label for="colormode">Color mode</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <input id="colormode">
+              </div>
+            </li>
+            <li class="ctrl fill">
               <label for="fill">Fill</label>
-              <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
-              <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
-              <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B">
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- need to add one for alpha -->
+                <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B">
+              </div>
             </li>
-            <li class="translate">
+            <li class="disabled ctrl stroke disabled">
+              <label for="stroke">Stroke</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl background disabled">
+              <label for="background">Background</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl arc">
+              <label for="arc">Arc</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl ellipse">
+              <label for="ellipse">Ellipse</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl line">
+              <label for="line">line</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl point">
+              <label for="point">Point</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl quad">
+              <label for="quad">Quad</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl rect">
+              <label for="rect">Rect</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl triangle">
+              <label for="triangle">Triangle</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl bezier">
+              <label for="bezier">Bezier</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl curve">
+              <label for="curve">Curve</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl plane">
+              <label for="plane">Plane</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl box">
+              <label for="box">Box</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl sphere">
+              <label for="sphere">Sphere</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl cylinder">
+              <label for="cylinder">Cylinder</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl cone">
+              <label for="cone">Cone</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl ellipsoid">
+              <label for="ellipsoid">Ellipsoid</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl torus">
+              <label for="torus">Torus</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl scale">
+              <label for="scale">Scale</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl translate">
               <label for="translate">Translate (random)</label>
-              <!-- not sure how this should work -->
-              <input id="tmin" class="spinner" type="number" min="0" max="10" name="tmin" value="0" placeholder="min">
-              <input id="tmax" class="spinner" type="number" min="0" max="10" name="tmax" value="0" placeholder="max">
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- not sure how this should work -->
+                <input id="tmin" class="spinner" type="number" min="0" max="10" name="tmin" value="0" placeholder="min">
+                <input id="tmax" class="spinner" type="number" min="0" max="10" name="tmax" value="0" placeholder="max">
+              </div>
             </li>
-            <li class='rotate'>
+            <li class='ctrl rotate'>
               <label for="rotate">Rotate (random)</label>
-              <input id="rotate" class="spinner" type="number" min="0" max="10" name="rotate" value="0">
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <input id="rotate" class="spinner" type="number" min="0" max="10" name="rotate" value="0">
+              </div>
+            </li>
+            <li class="disabled ctrl textsize">
+              <label for="textsize">Text size</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl textstyle">
+              <label for="textstyle">Text style</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl text">
+              <label for="text">Text</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl textfont">
+              <label for="textfont">Text font</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl camera">
+              <label for="camera">Camera</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl perspective">
+              <label for="perspective">Perspective</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl ambientlight">
+              <label for="ambientlight">Ambient light</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl directionallight">
+              <label for="directionallight">Directional light</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl pointlight">
+              <label for="pointlight">Point light</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl normalmaterial">
+              <label for="normalmaterial">Normal material</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl texture">
+              <label for="texture">Texture</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl ambientmaterial">
+              <label for="ambientmaterial">Ambient material</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl specularmaterial">
+              <label for="specularmaterial">Specular material</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
+            </li>
+            <li class="disabled ctrl save">
+              <label for="save">Save</label>
+              <div class="toggleBoxSmall">
+                <div class="knob"></div>
+              </div>
+              <div class="controlwrapper">
+                <!-- <input id="fill_r" class="spinner" type="number" name="fill_r" min="0" max="255" value="0" placeholder="R">
+                <input id="fill_g" class="spinner" type="number" name="fill_g" min="0" max="255" value="0" placeholder="G">
+                <input id="fill_b" class="spinner" type="number" name="fill_b" min="0" max="255" value="0" placeholder="B"> -->
+              </div>
             </li>
           </ul>
-          <button id="run" class="primary" type="button" name="button">RUN</button>
-          <button id="clear" class="secondary" type="button" name="button">CLEAR</button>
 
         </div>
-
+      </div>
+        <div class="buttonContainer">
+          <button id="run" class="primary" type="button" name="button">RUN</button>
+          <button id="clear" class="secondary" type="button" name="button">CLEAR</button>
+        </div>
       </nav>
       <section id="Content">
 
       </section>
-    </div>
     </div>
   </body>
 
@@ -85,6 +472,12 @@
 
       $('.toggleBoxSmall').click(function() {
         $(this).toggleClass('on');
+        var $panel = $(this).siblings('.controlwrapper');
+        if($(this).hasClass('on')){
+          $panel.slideDown();
+        }else{
+          $panel.slideUp();
+        }
       });
 
       function closeSidebar(){

@@ -27,6 +27,7 @@ body{
 }
 
 #Sidebar{
+  width:200px;
   height: 100%;
   position:absolute;
   border-right:1px solid #101010;
@@ -43,7 +44,7 @@ body{
 }
 
 .sidebar-inner{
-  padding: 15px;
+  padding: 15px 15px 45px;
 }
 
 #Content{
@@ -100,11 +101,16 @@ input[type=number]{
   opacity:100;
 }
 
-label{
-  margin-bottom: 5px;
+.listcontrols li .toggleBoxSmall{
+  float:right;
 }
 
-nav ul li label,
+.controlwrapper{
+  margin-top:5px;
+  overflow:hidden;
+  display:none;
+}
+
 nav ul li input {
   display:block;
 }
@@ -124,6 +130,19 @@ nav ul{
   width:50px;
 }
 
+.buttonContainer{
+  position:absolute;
+  bottom:0px;
+  background-color: #1f1f1f;
+  padding:8px;
+}
+
+.ctrl.disabled{
+  opacity: .3;
+  pointer-events: none;
+}
+
+/*************************/
 /*************************/
 
 .navbutton{
